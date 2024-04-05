@@ -1,9 +1,9 @@
 # from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from api.views.Login import Login
 
 urlpatterns = [
     #    path('admin/', admin.site.urls),
-    path('login/', Login, name='login'),
+    #path('login/', Login, name='login'),
+    path('api/', include('api.urls'))
 ]
