@@ -1,3 +1,3 @@
-from User import User
-from Log import Log
-from Authentication import Authentication
+from api.models.User import User
+from api.models.Log import Log
+from api.models.Authentication import Authentication
