@@ -19,7 +19,7 @@ class Login(APIView):
                             status=status.HTTP_200_OK)
 
         except Exception as e:
-            return Response({"status": {"code": "1", "message": e}, "data": {}}, status=status.HTTP_200_OK)
+            return Response({"status": {"code": "1", "message": "Login Error"}, "data": {}}, status=status.HTTP_200_OK)
 
     def generate_random_token(self, user, length=64):
         alphabet = string.ascii_letters + string.digits
