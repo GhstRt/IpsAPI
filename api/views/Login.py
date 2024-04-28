@@ -13,7 +13,7 @@ class Login(APIView):
         try:
             username = request.data["username"]
             password = request.data["password"]
-            user = User.objects.filter(username=username, password=password)
+            user = User.objects.get(username=username, password=password)
             token = self.generate_random_token(user)
             return Response({"status": {"code": "0", "message": "success"}, "data": {"user": user, "token": token}},
                             status=status.HTTP_200_OK)
