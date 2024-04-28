@@ -1,9 +1,8 @@
-import uuid
 from django.db import models
 
 
 class User(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=25)
     password = models.CharField(max_length=50)
     email = models.EmailField()
