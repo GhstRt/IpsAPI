@@ -1,3 +1,4 @@
+import base64
 import secrets
 import string
 from rest_framework import status
@@ -5,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from api.models.User import User
 from api.models.Authentication import Authentication
+import rsa
 
 
 class Login(APIView):
@@ -27,3 +29,4 @@ class Login(APIView):
         auth = Authentication(user=user, token=token)
         auth.save()
         return token
+
